@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ILoveCom</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}"/>
+  </head>
+  <body>
+    <h1>True Cost of JC Education</h1>
+    <form method="post">
+      <label for="subject">Subject: </label>
+      <input type="text" id="subject" name="subject"/>
+      <br/>
+      <label for="cost">Cost: </label>
+      <input type="text" id="cost" name="cost"/>
+      <br />
+      <label for="date">Date: </label>
+      <input type="date" id="date" name="date"/>
+      <br/>
+      <input type="submit" value="Pay!"/>
+    </form>
+    <p id="first">Urmom</p>
+    <p class="rest">is</p>
+    <p class="rest">immigrant</p>
+    {{ subject }}
+    {{ cost }}
+    {{ date }}
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Total</th>
+      </tr>
+      {% for record in records %}
+      <tr>
+        <td>{{ record[0] }}</td>
+        <td>{{ record[1] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <hr />
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Date</th>
+        <th>Cost</th>
+      </tr>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
